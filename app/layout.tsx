@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import Marquee from "@/components/marquee";
 import Footer from "@/components/footer";
+import AnimePopup from "@/components/anime-popup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <AnimePopup />
       </body>
     </html>
   );

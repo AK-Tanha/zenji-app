@@ -9,25 +9,36 @@ export default function CollectionShowcase() {
       id="collection"
       className="relative flex flex-col border-b border-border bg-[#FFFFFF]"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <ScrollReveal>
-          <div className="mb-12 flex items-end justify-between">
-            <div className="flex flex-col gap-3">
-              <span className="flex items-center gap-3 font-mono text-xs tracking-widest text-black/50">
-                <span className="text-2xl text-black/30">力</span>
-                <span className="h-px w-10 bg-black/15" />
-                <span className="text-accent">COLLECTION // THE_ORIGIN_DROP</span>
-              </span>
-              <h2 className="font-mono text-3xl font-bold tracking-tight text-black sm:text-5xl">
-                SALE
-              </h2>
-            </div>
-            <span className="hidden font-mono text-xs tracking-widest text-black/30 lg:block">
-              INDEX_001 — 004
+      <ScrollReveal>
+        <div className="flex items-end justify-between bg-stark-white px-6 py-12">
+          <div>
+            <span
+              className="block text-xs uppercase tracking-widest"
+              style={{
+                fontFamily: "var(--font-jetbrains), monospace",
+                color: "#BC0100",
+              }}
+            >
+              COLLECTION // THE_ORIGIN_DROP
             </span>
+            <h2
+              className="mt-3 text-5xl uppercase leading-none tracking-tight text-black md:text-7xl"
+              style={{ fontFamily: "var(--font-anton), sans-serif" }}
+            >
+              SALE
+            </h2>
           </div>
-        </ScrollReveal>
-      </div>
+          <a
+            className="shrink-0 whitespace-nowrap border border-black px-6 py-3 text-xs uppercase tracking-widest text-black transition-colors hover:bg-black hover:text-stark-white"
+            style={{ fontFamily: "var(--font-jetbrains), monospace" }}
+            href="/collection"
+          >
+            VIEW_ALL
+          </a>
+        </div>
+      </ScrollReveal>
+
+      <div className="mx-auto w-full max-w-7xl py-20 sm:px-6 lg:px-8">
 
       <div className="relative">
         {collectionFeatured.map((item, i) => (
@@ -70,6 +81,7 @@ export default function CollectionShowcase() {
             </Link>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );
