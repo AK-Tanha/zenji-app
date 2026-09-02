@@ -59,6 +59,12 @@ body {
   mix-blend-mode: overlay;
 }
 
+*,
+*::before,
+*::after {
+  cursor: url("https://zenji.shop/cursor-katana-135.png") 16 16, auto !important;
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
