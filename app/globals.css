@@ -13,6 +13,7 @@
   --color-accent: var(--accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: "IBM Plex Mono", "Ibm Plex Mono Fallback", monospace;
+  --font-display: var(--font-anton), "Arial Black", sans-serif;
 }
 
 html {

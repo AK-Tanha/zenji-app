@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const navLinks = [
@@ -8,10 +11,25 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="group flex items-center gap-3">
+    <header
+      className={`sticky top-0 z-50 flex h-[72px] items-center transition-all duration-300 ${
+        scrolled
+          ? "border-b border-border bg-background/80 backdrop-blur-md"
+          : "border-b border-transparent bg-transparent"
+      }`}
+    >
+      <nav className="mx-auto grid w-full max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-4 sm:px-6 lg:px-8">
+        <Link href="/" className="group flex items-center gap-3 justify-self-start">
           <span className="font-mono text-2xl text-accent">力</span>
           <span className="flex flex-col leading-none">
             <span className="font-mono text-xl font-bold tracking-[0.2em]">
@@ -28,18 +46,18 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-mono text-xs tracking-widest text-foreground/70 transition-colors hover:text-foreground"
+              className="font-mono text-xs font-bold tracking-widest text-white transition-colors hover:text-white/75"
             >
               {link.label}
             </Link>
           ))}
-          <span className="flex items-center gap-1.5 font-mono text-xs tracking-widest text-foreground/50">
-            MORE <span className="text-foreground/30">∨</span>
+          <span className="flex items-center gap-1.5 font-mono text-xs font-bold tracking-widest text-white">
+            MORE <span className="text-white/60">∨</span>
           </span>
         </div>
 
-        <div className="flex items-center gap-4">
-          <span className="hidden font-mono text-xs tracking-widest text-foreground/50 lg:inline">
+        <div className="flex items-center gap-4 justify-self-end">
+          <span className="hidden font-mono text-xs font-bold tracking-widest text-white lg:inline">
             SEARCH
           </span>
           <button

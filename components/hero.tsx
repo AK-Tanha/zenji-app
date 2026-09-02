@@ -1,54 +1,51 @@
-import Image from "next/image";
 import ScrollReveal from "@/components/scroll-reveal";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-[85vh] items-center overflow-hidden border-b border-border">
-      <Image
-        src="/background_2.webp"
-        alt="ZENJI anime streetwear hero background"
-        fill
-        className="object-cover"
-        sizes="100vw"
-        priority
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/30 to-background" />
-      <div className="absolute inset-0 grain" aria-hidden />
+    <section className="relative flex -mt-[72px] min-h-[95vh] items-center overflow-hidden border-b border-border">
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster="/background_2.webp"
+      >
+        <source src="https://zenji.shop/videos/hero.mp4" type="video/mp4" />
+      </video>
 
-      <div className="relative mx-auto flex w-full max-w-7xl flex-col items-start gap-8 px-4 py-32 sm:px-6 lg:px-8">
+      <div className="absolute bottom-12 left-[6%] z-10 max-w-[90%]">
         <ScrollReveal>
-          <span className="inline-flex items-center gap-2 border border-white/20 bg-background/40 px-4 py-2 font-mono text-xs tracking-widest text-white backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse-dot" />
-            SYSTEM // ZENJI
-          </span>
-        </ScrollReveal>
-
-        <ScrollReveal delay={100}>
-          <h1 className="font-mono text-5xl font-bold leading-[0.95] tracking-tight drop-shadow-lg sm:text-7xl lg:text-8xl">
-            WEAR YOUR
-            <br />
-            STORY
-          </h1>
-        </ScrollReveal>
-
-        <ScrollReveal delay={200}>
-          <div className="flex flex-wrap items-center gap-6">
-            <a
-              href="/drop"
-              className="group inline-flex items-center gap-3 border border-white px-8 py-4 font-mono text-sm tracking-widest backdrop-blur-sm transition-colors hover:bg-white hover:text-background"
-            >
-              SHOP THE DROP
-              <span className="transition-transform group-hover:translate-x-1">→</span>
-            </a>
-            <span className="font-mono text-xs tracking-widest text-white/40">
-              力 — AWAKENING
+          <div className="mb-4 flex items-center gap-3">
+            <span className="h-2 w-2 rounded-full bg-[#BC0100] animate-pulse-dot" />
+            <span className="font-mono text-[11px] font-bold uppercase tracking-[0.3em] text-[#BC0100]">
+              THE_ORIGIN_DROP // LOADING.
             </span>
           </div>
         </ScrollReveal>
 
-        <span className="pointer-events-none absolute -right-4 bottom-[-10rem] hidden select-none font-mono text-[22rem] font-bold leading-none text-white/[0.04] lg:block">
-          力
-        </span>
+        <ScrollReveal delay={100}>
+          <h1 className="font-display text-[clamp(52px,8vw,80px)] uppercase leading-none text-white">
+            <span>
+              WEAR YOUR
+              <br />
+            </span>
+            <span>STORY</span>
+          </h1>
+        </ScrollReveal>
+
+        <ScrollReveal delay={200}>
+          <div className="mt-8">
+            <a
+              href="/drop"
+              className="inline-block w-auto rounded-none bg-[#BC0100] px-8 py-4 text-[16px] uppercase text-white transition-colors duration-200 hover:bg-white hover:text-black"
+              style={{ fontFamily: "var(--font-anton), sans-serif" }}
+            >
+              SHOP THE DROP →
+            </a>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
