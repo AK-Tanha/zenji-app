@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/drop", label: "DROP" },
@@ -70,6 +71,17 @@ export default function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href;
+
+  const linkClasses = (href: string) =>
+    `nav-link-glow font-label-caps text-label-caps md:tracking-[0.04em] xl:tracking-[0.1em] transition-colors ${
+      isActive(href)
+        ? "is-active"
+        : "text-white opacity-80 hover:opacity-100"
+    }`;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -108,7 +120,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="nav-link-glow font-label-caps text-label-caps md:tracking-[0.04em] xl:tracking-[0.1em] transition-colors text-white opacity-80 hover:opacity-100"
+              className={linkClasses(link.href)}
             >
               {link.label}
             </Link>
@@ -126,16 +138,22 @@ export default function Navbar() {
             {moreOpen && (
               <div className="absolute right-0 top-full mt-2 border border-white/40 bg-deep-black px-4 py-2">
                 <Link
-                  href="/wishlist"
+                  href="/collaboration"
                   className="nav-link-glow block whitespace-nowrap py-2 font-label-caps text-label-caps tracking-[0.1em] text-white opacity-80 transition-colors hover:opacity-100"
                 >
-                  WISHLIST
+                  COLLABORATION
                 </Link>
                 <Link
-                  href="/login"
+                  href="/review"
                   className="nav-link-glow block whitespace-nowrap py-2 font-label-caps text-label-caps tracking-[0.1em] text-white opacity-80 transition-colors hover:opacity-100"
                 >
-                  ACCOUNT
+                  REVIEW
+                </Link>
+                <Link
+                  href="/faq"
+                  className="nav-link-glow block whitespace-nowrap py-2 font-label-caps text-label-caps tracking-[0.1em] text-white opacity-80 transition-colors hover:opacity-100"
+                >
+                  FAQ
                 </Link>
               </div>
             )}
@@ -224,17 +242,33 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="nav-link-glow font-label-caps text-label-caps tracking-[0.1em] text-white opacity-80 transition-colors hover:text-primary-red"
+                className={`nav-link-glow font-label-caps text-label-caps tracking-[0.1em] transition-colors hover:text-primary-red ${
+                  isActive(link.href) ? "is-active" : "text-white opacity-80"
+                }`}
               >
                 {link.label}
               </Link>
             ))}
             <Link
-              href="/wishlist"
+              href="/collaboration"
               onClick={() => setMenuOpen(false)}
               className="nav-link-glow font-label-caps text-label-caps tracking-[0.1em] text-white opacity-80 transition-colors hover:text-primary-red"
             >
-              MORE
+              COLLABORATION
+            </Link>
+            <Link
+              href="/review"
+              onClick={() => setMenuOpen(false)}
+              className="nav-link-glow font-label-caps text-label-caps tracking-[0.1em] text-white opacity-80 transition-colors hover:text-primary-red"
+            >
+              REVIEW
+            </Link>
+            <Link
+              href="/faq"
+              onClick={() => setMenuOpen(false)}
+              className="nav-link-glow font-label-caps text-label-caps tracking-[0.1em] text-white opacity-80 transition-colors hover:text-primary-red"
+            >
+              FAQ
             </Link>
           </div>
         </div>

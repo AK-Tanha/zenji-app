@@ -1,3 +1,7 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+
 const messages = [
   "NEW DROP: BLUE FLAME TEE NOW AVAILABLE",
   "LIMITED STOCK",
@@ -8,9 +12,15 @@ const messages = [
 const fullLine = messages.join(" • ");
 
 export default function Marquee() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const segments = Array.from({ length: 6 });
   return (
-    <div className="marquee-wrap relative overflow-hidden border-b-8 border-border bg-[#BC0100] py-2.5">
+    <div
+      className={`marquee-wrap relative overflow-hidden bg-[#BC0100] py-2.5 ${
+        isHome ? "border-b-8 border-border" : ""
+      }`}
+    >
       <div className="flex w-max shrink-0 animate-marquee">
         {segments.map((_, i) => (
           <span

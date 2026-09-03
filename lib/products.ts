@@ -6,6 +6,8 @@ export type Product = {
   slug: string;
   price: number;
   salePrice?: number;
+  badge?: string;
+  colorway?: string;
   images: string[];
 };
 
@@ -15,6 +17,8 @@ export const products: Product[] = [
   {
     name: "BLUE FLAME TEE",
     slug: "blue-flame-tee",
+    badge: "SALE",
+    colorway: "STEEL BLUE",
     price: 39.99,
     salePrice: 33.99,
     images: [img("Blue-flame-1.webp"), img("Blue-flame-2.webp")],
@@ -22,12 +26,16 @@ export const products: Product[] = [
   {
     name: "BUSHIDO TEE",
     slug: "bushido-tee",
+    badge: "LIMITED",
+    colorway: "SAND / EARTH",
     price: 39.99,
     images: [img("Bushido-1.webp"), img("Bushido-2.webp")],
   },
   {
     name: "DEMON BLOOD TEE",
     slug: "demon-blood-tee",
+    badge: "SALE",
+    colorway: "CRIMSON PINK",
     price: 39.99,
     salePrice: 33.99,
     images: [img("Demon-blood-1.webp"), img("Demon-blood-2.webp")],
@@ -35,30 +43,40 @@ export const products: Product[] = [
   {
     name: "DOMAIN EXPANSION TEE",
     slug: "domain-expansion-tee",
+    badge: "THE_ORIGIN_DROP",
+    colorway: "VOID PURPLE",
     price: 39.99,
     images: [img("Domain-expansion-1.webp"), img("Domain-expansion-2.webp")],
   },
   {
     name: "FREE SOUL TEE",
     slug: "free-soul-tee",
+    badge: "LIMITED",
+    colorway: "ASH WHITE",
     price: 39.99,
     images: [img("Free-soul-1.webp"), img("Free-soul-2.webp")],
   },
   {
     name: "LIMITLESS TEE",
     slug: "limitless-tee",
+    badge: "LIMITED",
+    colorway: "SHADOW OLIVE",
     price: 39.99,
     images: [img("Limitless-1.webp"), img("Limitless-2.webp")],
   },
   {
     name: "PARADISE SPIRIT TEE",
     slug: "paradise-spirit-tee",
+    badge: "THE_ORIGIN_DROP",
+    colorway: "SAGE OLIVE",
     price: 39.99,
     images: [img("Paradise-spirit-1.webp"), img("Paradise-spirit-2.webp")],
   },
   {
     name: "WARRIOR SPIRIT TEE",
     slug: "warrior-spirit-tee",
+    badge: "SALE",
+    colorway: "FOREST GREEN",
     price: 39.99,
     salePrice: 33.99,
     images: [img("Warrior-spirit-2.webp"), img("Warrior-spirit-4.webp")],
@@ -66,12 +84,16 @@ export const products: Product[] = [
   {
     name: "WATER BREATHING TEE",
     slug: "water-breathing-tee",
+    badge: "NEW_ARRIVAL",
+    colorway: "OCEAN TEAL",
     price: 39.99,
     images: [img("Water-breathing-1.webp"), img("Water-breathing-2.webp")],
   },
   {
     name: "WILL OF THE SUN TEE",
     slug: "will-of-the-sun-tee",
+    badge: "SALE",
+    colorway: "SOLAR GOLD",
     price: 39.99,
     salePrice: 33.99,
     images: [img("Will-of-the-sun-1.webp"), img("Will-of-the-sun-2.webp")],
