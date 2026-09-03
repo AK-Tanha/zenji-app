@@ -2,7 +2,7 @@ import ScrollReveal from "@/components/scroll-reveal";
 
 export default function Hero() {
   return (
-    <section className="relative flex -mt-[72px] min-h-[95vh] items-center overflow-hidden border-b border-border">
+    <section className="relative flex -mt-[76px] min-h-[95vh] items-center overflow-hidden border-b border-border">
       <video
         className="absolute inset-0 h-full w-full object-cover"
         autoPlay

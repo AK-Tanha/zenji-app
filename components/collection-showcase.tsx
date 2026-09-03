@@ -61,21 +61,37 @@ export default function CollectionShowcase() {
               <span className="absolute left-4 top-4 font-mono text-xs tracking-widest text-white/80 mix-blend-difference">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-black/70 to-transparent p-6">
-                <div className="flex flex-col gap-1">
-                  <span className="font-mono text-xs tracking-widest text-white/60">
-                    COLLECTION // THE_ORIGIN_DROP
+              <div
+                className="absolute bottom-0 left-0 right-0"
+                style={{
+                  background:
+                    "linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%)",
+                  padding: "2rem",
+                }}
+              >
+                <span
+                  className="text-[10px] uppercase tracking-[0.3em]"
+                  style={{ fontFamily: "var(--font-jetbrains), monospace", color: "#BC0100" }}
+                >
+                  COLLECTION{" "}
+                  <span style={{ color: "rgba(255,255,255,0.45)" }}>
+                    // THE_ORIGIN_DROP
                   </span>
-                  <h3 className="font-mono text-xl font-bold tracking-tight text-white sm:text-2xl">
-                    {item.name}
-                  </h3>
-                  <p className="font-mono text-sm text-white/80">
-                    A$33.99{" "}
-                    <span className="line-through text-white/40">A$39.99</span>
-                  </p>
-                </div>
-                <span className="mb-1 shrink-0 font-mono text-xs tracking-widest text-white transition-transform group-hover:translate-x-1">
-                  SHOP →
+                </span>
+                <span
+                  className="mt-2 block text-[32px] uppercase leading-none text-white transition-colors group-hover:text-[#BC0100] md:text-[40px]"
+                  style={{ fontFamily: "var(--font-anton), sans-serif" }}
+                >
+                  {item.name}
+                </span>
+                <span
+                  className="mt-5 inline-block w-fit border-b pb-1 text-[11px] uppercase tracking-widest text-white transition-colors group-hover:border-[#BC0100] group-hover:text-[#BC0100]"
+                  style={{
+                    fontFamily: "var(--font-jetbrains), monospace",
+                    borderColor: "currentColor",
+                  }}
+                >
+                  SHOP {item.name} →
                 </span>
               </div>
             </Link>

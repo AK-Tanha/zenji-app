@@ -10,7 +10,7 @@ const fullLine = messages.join(" • ");
 export default function Marquee() {
   const segments = Array.from({ length: 6 });
   return (
-    <div className="marquee-wrap relative overflow-hidden border-b border-border bg-[#BC0100] py-2.5">
+    <div className="marquee-wrap relative overflow-hidden border-b-8 border-border bg-[#BC0100] py-2.5">
       <div className="flex w-max shrink-0 animate-marquee">
         {segments.map((_, i) => (
           <span

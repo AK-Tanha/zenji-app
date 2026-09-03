@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Waitlist() {
   return (
-    <section className="relative overflow-hidden border-b border-border">
+    <section className="relative overflow-hidden">
       <Image
         src="https://zenji.shop/background_2.webp"
         alt=""

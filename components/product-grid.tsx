@@ -114,21 +114,18 @@ function ProductCard({
           </div>
         </div>
 
-        <div className="border-t border-black/10 bg-white px-4 py-4">
-          <span className="block truncate font-mono text-sm uppercase tracking-widest text-black">
+        <div className="border-t border-deep-black bg-stark-white px-4 py-4">
+          <span
+            className="block truncate text-sm uppercase tracking-widest text-black"
+            style={{ fontFamily: "var(--font-anton), sans-serif" }}
+          >
             {name}
           </span>
-          <span className="mt-2 block font-mono text-2xl leading-none tracking-wide text-black">
-            {salePrice ? (
-              <>
-                {formatPrice(salePrice)}
-                <span className="ml-2 text-sm text-black/40 line-through">
-                  {formatPrice(price)}
-                </span>
-              </>
-            ) : (
-              formatPrice(price)
-            )}
+          <span
+            className="mt-2 block text-2xl leading-none tracking-wide text-black"
+            style={{ fontFamily: "var(--font-anton), sans-serif" }}
+          >
+            {salePrice ? formatPrice(salePrice) : formatPrice(price)}
           </span>
         </div>
       </Link>

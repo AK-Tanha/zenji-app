@@ -16,6 +16,17 @@
   --font-display: var(--font-anton), "Arial Black", sans-serif;
 }
 
+@theme {
+  --color-stark-white: #f6f6f2;
+  --color-deep-black: #0a0a0a;
+  --color-primary-red: #bc0100;
+  --container-max: 90rem;
+  --spacing-margin-mobile: 1.25rem;
+  --spacing-margin-desktop: 4rem;
+  --font-label-caps: "IBM Plex Mono", "Ibm Plex Mono Fallback", monospace;
+  --text-label-caps: 0.75rem;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -72,6 +83,15 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.nav-link-glow {
+  position: relative;
+  transition: text-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-link-glow:hover {
+  text-shadow: 0 0 12px rgba(188, 1, 0, 0.8);
 }
 
 @keyframes marquee {
