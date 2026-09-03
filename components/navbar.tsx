@@ -136,22 +136,22 @@ export default function Navbar() {
               MORE <span aria-hidden="true">∨</span>
             </button>
             {moreOpen && (
-              <div className="absolute right-0 top-full mt-2 border border-white/40 bg-deep-black px-4 py-2">
+              <div className="absolute left-0 top-full mt-2 border border-black/10 bg-white px-0 py-0">
                 <Link
                   href="/collaboration"
-                  className="nav-link-glow block whitespace-nowrap py-2 font-label-caps text-label-caps tracking-[0.1em] text-white opacity-80 transition-colors hover:opacity-100"
+                  className="block whitespace-nowrap px-6 py-3 font-label-caps text-sm tracking-[0.1em] text-black transition-colors last:border-b-0 hover:bg-black hover:text-white"
                 >
                   COLLABORATION
                 </Link>
                 <Link
                   href="/review"
-                  className="nav-link-glow block whitespace-nowrap py-2 font-label-caps text-label-caps tracking-[0.1em] text-white opacity-80 transition-colors hover:opacity-100"
+                  className="block whitespace-nowrap border-b border-black/10 px-6 py-3 font-label-caps text-sm tracking-[0.1em] text-black transition-colors last:border-b-0 hover:bg-black hover:text-white"
                 >
                   REVIEW
                 </Link>
                 <Link
                   href="/faq"
-                  className="nav-link-glow block whitespace-nowrap py-2 font-label-caps text-label-caps tracking-[0.1em] text-white opacity-80 transition-colors hover:opacity-100"
+                  className="block whitespace-nowrap border-b border-black/10 px-6 py-3 font-label-caps text-sm tracking-[0.1em] text-black transition-colors last:border-b-0 hover:bg-black hover:text-white"
                 >
                   FAQ
                 </Link>
